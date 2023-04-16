@@ -1,0 +1,12 @@
+%h2 習慣の登録
+
+%p 習慣を登録してください。
+
+= form_with model: @habit, local: true, class: "requires-validation", novalidate: true do |f|
+  .form-group
+    %div.class.col-md-12
+      = f.label :name, "習慣名"
+      = f.text_field :name, class: "form-control", required: true
+      %div.invalid-feedback この項目は必須です
+
+  = f.submit "保存", class: "btn btn-primary mt-3"
